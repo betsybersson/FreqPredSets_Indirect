@@ -16,7 +16,7 @@ Ns = c(10,100,1000)
 N.titles = c("N=10","N=100","N=1000")
 prob.class = "skewed2" # skewed1,uniform
 
-S  = 5000 # num of data sets in simulation
+S  = 500 #5000 # num of data sets in simulation
 #################################
 
 #################################
@@ -94,10 +94,10 @@ for (K.ind in 1:length(Ks)){
     
     
     # fab pred set
-    fab.good = FAB_cat_pred(n,alpha.prior.good,epsilon)
+    fab.good = MN_indir_pred(n,alpha.prior.good,epsilon)
     fab.bad = oracle_ordering_pred(n,oracle.ordering.vec,epsilon) # FAB_cat_pred(n,alpha.prior.bad,epsilon) 
     # direct- no prior
-    freq = FAB_cat_pred(n,rep(0,K),epsilon)
+    freq = MN_indir_pred(n,rep(0,K),epsilon)
     
     # get cardinality
     fab.good.len = c(fab.good.len, length(fab.good$pred) )

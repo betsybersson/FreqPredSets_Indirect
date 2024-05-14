@@ -42,3 +42,12 @@ get_nn = function(lat,lon,
   
   return(Adj.ind)
 }
+draw_line = function(X,Y,color){
+  if ( is.matrix(Y)){
+    Y.plot = rbind(Y,NA)
+  } else {
+    Y.plot = c(Y,NA)
+  }
+  lines(rep(X,each = 3),Y.plot,col = color)
+  # points(rep(X,each = 2),rbind(Y),col = color,pch="-")
+}
